@@ -20,10 +20,10 @@ def siftdown(i, data, swaps):
         siftdown(node, data, swaps)
 def main():
     input_in = input()
-    if input_in == "I":
+    if "I" in input_in:
         n = int(input())
         data = list(map(int, input().split()))
-    elif  input_in == "F":
+    elif "F" in input_in:
         filename = input()
         if "a" not in filename:
             with open("./tests/" + filename, mode='r') as f:
