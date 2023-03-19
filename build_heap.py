@@ -19,20 +19,20 @@ def siftdown(i, data, swaps):
         swaps.append((i, node))
         siftdown(node, data, swaps)
 def main():
-    input_type = input()
-    if "I" in input_type:
-        nav = int(input())
+    input_in = input()
+    if input_in == "I":
+        n = int(input())
         data = list(map(int, input().split()))
-    elif "F" in input_type:
+    elif  input_in == "F":
         filename = input()
         if "a" not in filename:
             with open("./tests/" + filename, mode='r') as f:
-                nav = int(f.readline())
+                n = int(f.readline())
                 data = list(map(int, f.readline().split()))
     else:
         print("error")
         return
-    assert len(data) == nav
+    assert len(data) == n
     swaps = build_heap(data)
     print(len(swaps))
     for i, j in swaps:
