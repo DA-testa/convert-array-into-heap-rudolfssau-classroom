@@ -16,7 +16,7 @@ def siftdown(i, data, swaps):
         node = right_child
     if i != node:
         data[i], data[node] = data[node], data[i]
-        swaps.append(i, node)
+        swaps.append((i, node))
         siftdown(node, data, swaps)
 def main():
     input_type = input()
